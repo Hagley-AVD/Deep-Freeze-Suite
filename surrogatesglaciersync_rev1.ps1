@@ -11,7 +11,7 @@ Start-Log -LogPath “\\DATA2\AVD_Dept\MIKE\Logs” -LogName “$logName” -Scr
 
 foreach ($collection in $surrArray){
 if ($collection -ne $bunnie){
-Start-Process -FilePath "C:\Program Files\FastGlacier\glacier-sync.exe" -Args "mdemers $surrogatesLocal\$collection us-east-1 $surrogatesGlacier/$collection ncs" -Wait
+Start-Process -FilePath "C:\Program Files\FastGlacier\glacier-con.exe" -Args "sync mdemers $surrogatesLocal\$collection us-east-1 $surrogatesGlacier/$collection ncks" -Wait
 $timeLoad = Get-Date
 Write-LogInfo -LogPath “\\DATA2\AVD_Dept\MIKE\Logs\$logName” -Message “$collection synced to glacier at $timeLoad.”
     }

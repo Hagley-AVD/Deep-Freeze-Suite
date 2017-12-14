@@ -9,7 +9,7 @@ Start-Log -LogPath “\\DATA2\AVD_Dept\MIKE\Logs” -LogName “$logName” -Scr
 
 
 foreach ($collection in $bdArray){
-Start-Process -FilePath "C:\Program Files\FastGlacier\glacier-sync.exe" -Args "mdemers $borndigLocal\$collection us-east-1 $borndigGlacier/$collection ncs" -Wait
+Start-Process -FilePath "C:\Program Files\FastGlacier\glacier-con.exe" -Args "sync mdemers $borndigLocal\$collection us-east-1 $borndigGlacier/$collection ncks" -Wait
 $timeLoad = Get-Date
 Write-LogInfo -LogPath “\\DATA2\AVD_Dept\MIKE\Logs\$logName” -Message “$collection synced to glacier at $timeLoad.”
 	}

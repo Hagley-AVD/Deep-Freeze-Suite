@@ -10,7 +10,7 @@ Start-Log -LogPath "\\DATA2\AVD_Dept\MIKE\Logs" -LogName "$logName" -ScriptVersi
 
 
 foreach ($collection in $alphaArray){
-Start-Process -FilePath "C:\Program Files\FastGlacier\glacier-sync.exe" -Args "mdemers $videoLocal\$collection us-east-1 $videoGlacier/$collection ncs" -Wait
+Start-Process -FilePath "C:\Program Files\FastGlacier\glacier-con.exe" -Args "sync mdemers $videoLocal\$collection us-east-1 $videoGlacier/$collection ncks" -Wait
 $timeLoad = Get-Date
 Write-LogInfo -LogPath "\\DATA2\AVD_Dept\MIKE\Logs\$logName" -Message "$collection synced to glacier at $timeLoad."
 	}
