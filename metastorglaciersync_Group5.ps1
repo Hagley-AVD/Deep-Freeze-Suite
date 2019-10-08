@@ -4,7 +4,7 @@ $metastorLocal = '\\192.168.182.10\Metastor\Scans'
 $metastorGlacier = 'METASTOR'
 $logDate = Get-Date -format yyyyMMddHHmm
 $logName = "METASTOR_$logDate.log"
-$alphaArray = $msArray[0..4]
+$alphaArray = $msArray[15..19]
 
 Start-Log -LogPath "\\DATA2\AVD_Dept\MIKE\Logs" -LogName "$logName" -ScriptVersion "1.0"
 

@@ -19,15 +19,15 @@ if ($collection -eq $bunnie){
 Write-LogInfo -LogPath “\\DATA2\AVD_Dept\MIKE\Logs\$logName” -Message “Skipping $bunnie”
 }
     }
-
+<#
 $timeComplete = Get-Date
 $notification = @{
             type = 'note'
             title = "Surrogate Sync Complete"
             body = "surrogates glacier sync completed at $timeComplete"
         }
-$pbkey = '[REDACTED]'
+$pbkey = 'o.EQm2ZIBDfotyrjHEBd6C0zMKGJSv9Y2T'
 $credentials = New-Object System.Management.Automation.PSCredential ($pbkey, (ConvertTo-SecureString $pbkey -AsPlainText -Force))
 Invoke-RestMethod -Uri 'https://api.pushbullet.com/v2/pushes' -body $notification  -method Post -credential $credentials
-
+#>
 Stop-Log -LogPath “\\DATA2\AVD_Dept\MIKE\Logs\$logName”
